@@ -1,0 +1,246 @@
+/**
+ * FACTORY
+ */
+/* Abstracts */
+/* Reset */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+html {
+  line-height: 1.5;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+html,
+body,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+input,
+textarea,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button,
+select {
+  text-decoration: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  background-color: transparent;
+  background-image: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+[hidden] {
+  display: none;
+}
+
+button,
+[role=button] {
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: default;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  appearance: auto;
+}
+
+:disabled {
+  opacity: 1;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+  border: 0;
+}
+
+details,
+summary {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+input::placeholder {
+  background: none;
+  border: none;
+}
+
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+textarea::placeholder {
+  text-transform: none;
+}
+
+*,
+::before,
+::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+button:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.font-size {
+  font-size: 0.75rem;
+}
+
+.font-weight-bold {
+  font-weight: 800;
+}
+
+.margin-bottom {
+  margin-bottom: 16px;
+}
+
+.line-height {
+  line-height: 1.75;
+}
+
+/* Components */
+.breadcrumbs {
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.breadcrumbs li:after {
+  content: "/";
+  margin: 0 0.25rem;
+  color: #777;
+  opacity: 0.5;
+}
+.breadcrumbs li:last-child:after {
+  display: none;
+}
+.breadcrumbs a {
+  color: #777;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+  max-width: 1240px;
+}
+.container *:focus {
+  scroll-margin-top: var(--header-height);
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+    max-width: 480px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    padding: 0 1.5rem;
+    max-width: 768px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 2rem;
+    max-width: 1280px;
+  }
+}
+
+/* Layout */
+
+/*# sourceMappingURL=main.css.map */

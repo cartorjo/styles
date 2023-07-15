@@ -1,0 +1,38 @@
+@import "../abstracts/mixins";
+
+// Common Breakpoints
+$breakpoint-mobile: 480px; // Mobile devices and small tablets
+$breakpoint-tablet: 768px; // Medium-sized tablets and small laptops
+$breakpoint-desktop: 1280px; // Desktop screens and larger laptops
+
+// Container
+$container-max-width: 1240px;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+  max-width: $container-max-width;
+
+  *:focus {
+    scroll-margin-top: var(--header-height);
+  }
+
+  // Group 1 - Mobile Devices
+  @include media-query-max-width($breakpoint-mobile) {
+    padding: 0 1rem;
+    max-width: $breakpoint-mobile;
+  }
+
+  // Group 2 - Tablets and Small Laptops
+  @include media-query-range($breakpoint-tablet, $breakpoint-desktop - 1px) {
+    padding: 0 1.5rem;
+    max-width: $breakpoint-tablet;
+  }
+
+  // Group 3 - Desktop Screens and Larger Laptops
+  @include media-query-min-width($breakpoint-desktop) {
+    padding: 0 2rem;
+    max-width: $breakpoint-desktop;
+  }
+}

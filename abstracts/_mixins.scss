@@ -1,0 +1,169 @@
+@import "../abstracts/variables";
+
+// Positioning Mixins
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin aspect-ratio($ratio) {
+  position: relative;
+  width: 100%;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: $ratio * 100%;
+  }
+}
+
+// Typography Mixins
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin text-truncate($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+// Flexbox Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Background Mixins
+@mixin background-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin background-fixed {
+  background-attachment: fixed;
+}
+
+@mixin background-linear-gradient($direction, $start-color, $end-color) {
+  background-image: linear-gradient($direction, $start-color, $end-color);
+}
+
+// Button Mixins
+@mixin button($background-color, $color) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: $background-color;
+  color: $color;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  appearance: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($background-color, 5%);
+  }
+
+  &.small {
+    font-size: font-size(1);
+    padding: 0.33rem;
+    line-height: 1;
+  }
+
+  &.pill {
+    border-radius: 9999px;
+    padding-left: 0.66rem;
+    padding-right: 0.66rem;
+  }
+
+  &.fill {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &[aria-pressed='true'],
+  &[aria-selected='true'],
+  &[aria-current='true'] {
+    background-color: $color;
+    color: $background-color;
+  }
+}
+
+// Transition Mixins
+@mixin transition($properties, $duration, $timing-function: ease) {
+  transition: $properties $duration $timing-function;
+}
+
+// Utility Mixins
+@mixin opacity($value) {
+  opacity: $value;
+  @if $value < 1 {
+    transition: opacity 0.3s;
+  }
+}
+
+@mixin font-face($font-family, $font-style: normal, $font-weight: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: url('font.woff2') format('woff2'),
+    url('/path/to/font.woff') format('woff');
+    font-style: $font-style;
+    font-weight: $font-weight;
+  }
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// Mixin for a media query with a minimum width
+@mixin media-query-min-width($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Mixin for a media query with a maximum width
+@mixin media-query-max-width($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Mixin for a media query with a range of widths
+@mixin media-query-range($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

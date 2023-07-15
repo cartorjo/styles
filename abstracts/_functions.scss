@@ -1,0 +1,37 @@
+@import "../abstracts/variables";
+
+@function font-size($level) {
+  @if map-has-key($font-sizes, $level) {
+    @return map-get($font-sizes, $level);
+  } @else {
+    @warn "Font size not found for level: #{$level}.";
+    @return null;
+  }
+}
+
+@function font-weight($weight) {
+  @if map-has-key($font-weights, $weight) {
+    @return map-get($font-weights, $weight);
+  } @else {
+    @warn "Font weight not found for value: #{$weight}.";
+    @return null;
+  }
+}
+
+@function margin-bottom($level) {
+  @if map-has-key($spacing-values, $level) {
+    @return map-get($spacing-values, $level);
+  } @else {
+    @warn "Margin bottom not found for level: #{$level}.";
+    @return null;
+  }
+}
+
+@function line-height($type) {
+  @if map-has-key($line-heights, $type) {
+    @return map-get($line-heights, $type);
+  } @else {
+    @warn "Line height not found for type: #{$type}.";
+    @return null;
+  }
+}

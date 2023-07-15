@@ -1,0 +1,17 @@
+@import "../abstracts/functions";
+
+.font-size {
+  font-size: font-size(1);
+}
+
+.font-weight-bold {
+  font-weight: font-weight("bold");
+}
+
+.margin-bottom {
+  margin-bottom: margin-bottom(2);
+}
+
+.line-height {
+  line-height: line-height("default");
+}
